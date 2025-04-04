@@ -99,7 +99,7 @@ self.setTrack = function (content) {
     self.ass_track = self.octObj.track;
     self.ass_renderer = self.octObj.ass_renderer;
     self.ass_library = self.octObj.ass_library;
-    self.getRenderMethod()();
+    self.getRenderMethod()(true);
 };
 
 /**
@@ -517,7 +517,7 @@ function onMessageFromMainEmscriptenThread(message) {
                     Module.canvas.boundingClientRect = message.data.boundingClientRect;
                 }
                 self.resize(message.data.width, message.data.height);
-                self.getRenderMethod()();
+                self.getRenderMethod()(true);
             } else throw 'ey?';
             break;
         }
