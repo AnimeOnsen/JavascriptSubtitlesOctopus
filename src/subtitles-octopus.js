@@ -461,6 +461,8 @@ var SubtitlesOctopus = function (options) {
     }
 
     self.resize = function (width, height, top, left) {
+        if (self.video === null) self.video = options.video;
+
         var videoSize = null;
         top = top || 0;
         left = left || 0;
